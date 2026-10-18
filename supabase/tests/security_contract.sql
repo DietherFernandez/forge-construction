@@ -1,0 +1,11 @@
+begin;
+select plan(7);
+select ok((select relrowsecurity from pg_class where oid='public.inquiries'::regclass),'inquiries have RLS enabled');
+select ok((select relrowsecurity from pg_class where oid='public.projects'::regclass),'projects have RLS enabled');
+select ok((select relrowsecurity from pg_class where oid='public.quotations'::regclass),'quotations have RLS enabled');
+select ok(not has_table_privilege('anon','public.inquiries','SELECT'),'anonymous role cannot select inquiries');
+select ok(not has_table_privilege('authenticated','public.submission_rate_limits','SELECT'),'authenticated clients cannot read rate-limit keys');
+select ok(not has_function_privilege('anon','public.submit_public_inquiry(text,text,text,text,text,text,date,text,boolean,uuid,text)','EXECUTE'),'anonymous users cannot call privileged inquiry RPC directly');
+select ok(not has_table_privilege('authenticated','public.user_roles','UPDATE'),'authenticated users cannot edit protected roles');
+select * from finish();
+rollback;

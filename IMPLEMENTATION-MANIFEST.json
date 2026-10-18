@@ -1,0 +1,32 @@
+{
+  "source": "DietherFernandez/forge-construction main public archive",
+  "preserved_assets": [
+    "public/assets/images/forge_commercial-small.webp",
+    "public/assets/images/forge_commercial.webp",
+    "public/assets/images/forge_hero-small.webp",
+    "public/assets/images/forge_hero.webp",
+    "public/assets/images/forge_intro.webp",
+    "public/assets/images/forge_residential-small.webp",
+    "public/assets/images/forge_residential.webp",
+    "public/assets/videos/forge-hero.mp4"
+  ],
+  "versions": {
+    "next": "16.4.2",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "tailwindcss": "4.3.3",
+    "supabase_ssr": "0.12.7",
+    "supabase_js": "2.118.0",
+    "zod": "4.6.5",
+    "react_hook_form": "7.90.0",
+    "pdfkit": "0.20.2",
+    "lucide_react": "1.59.0"
+  },
+  "merge_base": "1320d01cb6bcb5d4190b0abf14c90e15cbebe182",
+  "merge_notes": [
+    "Preserved GitHub landing and assets; React lifecycle initializes video and effects.",
+    "Imported Next.js admin, authentication, API routes and client portal.",
+    "Added forward database repair migration and PostgreSQL regression tests.",
+    "Bundled local brand fonts; added reproducible npm lockfile."
+  ]
+}
