@@ -47,7 +47,7 @@ export function DashboardShell({area,email,children}:{area:"admin"|"portal";emai
      <button className="dashboard-mobile-trigger forge-button secondary" type="button" aria-label="Open navigation" aria-haspopup="dialog" onClick={()=>dialog.current?.showModal()}><Menu size={18} aria-hidden="true"/></button>
      <div><p className="forge-kicker">{area==="admin"?"FORGE / ADMIN":"FORGE / CLIENT"}</p><h1 className="font-bold uppercase tracking-tight" style={{fontFamily:"var(--display)"}}>{title}</h1></div>
     </div>
-    <div className="dashboard-topbar-actions"><Link href={dashboard} className="dashboard-home-link"><LayoutDashboard size={16} aria-hidden="true"/><span>Go to Dashboard</span><ArrowUpRight size={14} aria-hidden="true"/></Link><span className="dashboard-account-email">{email}</span></div>
+    <div className="dashboard-topbar-actions"><Link href="/" className="dashboard-home-link"><LayoutDashboard size={16} aria-hidden="true"/><span>Go to Website</span><ArrowUpRight size={14} aria-hidden="true"/></Link><span className="dashboard-account-email">{email}</span></div>
    </header>
    <dialog className="dashboard-dialog" ref={dialog} aria-label={`${area} navigation`}>
     <div className="mobile-menu-content">
