@@ -4,3 +4,40 @@
 @media(max-width:900px){.forge-grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard-sidebar{width:220px;flex-basis:220px}}
 @media(max-width:680px){.forge-nav.desktop{display:none}.forge-grid.two,.forge-grid.three{grid-template-columns:1fr}.forge-form{grid-template-columns:1fr}.forge-field.wide{grid-column:auto}.dashboard-sidebar{display:none}.dashboard-mobile-trigger{display:inline-flex}.dashboard-topbar{padding:0 1rem}.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quote-line{grid-template-columns:1fr 1fr}.quote-line .full{grid-column:1/-1}.forge-footer-inner{display:grid}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* Keep navigation and sign-out independent of the document's content height. */
+.dashboard-sidebar{position:fixed;inset:0 auto 0 0;z-index:30;height:100dvh;overflow:hidden}
+.dashboard-sidebar>.forge-brand,.dashboard-sidebar>p{flex-shrink:0}
+.dashboard-sidebar .dashboard-nav,.dashboard-dialog .dashboard-nav{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;align-content:start;overscroll-behavior:contain;scrollbar-width:thin;margin:1.5rem 0 1rem;padding:3px}
+.dashboard-main{margin-left:258px}
+.dashboard-signout{display:flex;align-items:center;gap:.65rem;flex-shrink:0;min-height:48px;width:100%;padding:.85rem .8rem calc(.85rem + env(safe-area-inset-bottom));border:0;border-top:1px solid #ffffff26;background:transparent;color:#f5f3ed;text-align:left;font-size:.85rem;cursor:pointer}
+.dashboard-signout:hover{background:#ffffff0a}.dashboard-signout:disabled{opacity:.6;cursor:wait}
+.dashboard-topbar-actions{display:flex;align-items:center;gap:1.25rem;min-width:0}
+.dashboard-home-link{display:inline-flex;align-items:center;gap:.5rem;padding:.65rem .8rem;border:1px solid #d3cfc3;text-decoration:none;font-size:.7rem;font-weight:700;white-space:nowrap}
+.dashboard-home-link:hover{border-color:#d25c2d;color:#b94d25}
+.dashboard-account-email{font-size:.8rem;color:#686861;max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dashboard-dialog .mobile-menu-content{display:flex;flex-direction:column;height:100dvh;min-height:0;overflow:hidden;padding-bottom:max(1.5rem,env(safe-area-inset-bottom))}
+.dashboard-dialog .mobile-menu-content>div:first-child{flex-shrink:0}
+@media(max-width:900px){.dashboard-main{margin-left:220px}.dashboard-account-email{display:none}}
+@media(max-width:680px){.dashboard-main{margin-left:0}.dashboard-topbar{gap:.6rem}.dashboard-home-link{font-size:.62rem;gap:.35rem;padding:.6rem}.dashboard-home-link>svg:last-child{display:none}.dashboard-topbar-actions{gap:0}}
+
+/* Responsive dashboard content and action targets. */
+.dashboard-content{width:100%;overflow-wrap:anywhere}
+.dashboard-content .forge-grid,.dashboard-content .forge-form,.dashboard-content .forge-panel,.dashboard-content .forge-field,.dashboard-content .metric-card,.dashboard-content .forge-grid>*,.dashboard-content .forge-form>*{min-width:0}
+.dashboard-content input:not([type=checkbox]):not([type=radio]):not([type=hidden]),.dashboard-content select,.dashboard-content textarea{min-width:0;max-width:100%;width:100%}
+.dashboard-content input[type=checkbox],.dashboard-content input[type=radio]{flex-shrink:0}
+.dashboard-content .forge-button{min-height:44px;max-width:100%;white-space:normal;text-align:center;line-height:1.5;overflow-wrap:anywhere}
+.dashboard-content .forge-button svg{flex-shrink:0}
+.dashboard-content form.flex,.dashboard-content .page-heading-actions{flex-wrap:wrap}
+.dashboard-content form.flex>input,.dashboard-content form.flex>select{flex:1 1 180px;width:auto}
+.dashboard-content .forge-table-wrap{width:100%;max-width:100%;min-width:0;overscroll-behavior-x:contain}
+.dashboard-content .forge-table td{max-width:320px;overflow-wrap:anywhere}
+.dashboard-content .forge-table a{display:inline-flex;align-items:center;min-height:44px;padding-block:.45rem;text-underline-offset:3px}
+.dashboard-content .forge-title{font-size:clamp(2.5rem,4.8vw,4.5rem);overflow-wrap:anywhere}
+.page-heading-copy{min-width:0;flex:1 1 240px}.page-heading-actions{display:flex;align-items:center;gap:.65rem;max-width:100%}
+.dashboard-content .forge-status svg{flex-shrink:0}
+@media(max-width:1100px){.dashboard-content .quote-line{grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem;padding:1rem;border:1px solid var(--forge-line);margin-bottom:1rem}.dashboard-content .quote-line .full{grid-column:1/-1}.dashboard-content .quote-line>button{justify-self:end;align-self:end;min-width:44px}}
+@media(max-width:900px){.dashboard-content .forge-grid.two,.dashboard-content .forge-form{grid-template-columns:1fr}.dashboard-content .forge-field.wide{grid-column:1/-1}}
+@media(max-width:680px){.dashboard-topbar{height:auto;min-height:74px;padding-block:.8rem;flex-wrap:wrap}.dashboard-content .page-heading-actions{width:100%}.dashboard-content .page-heading-actions>.forge-button{flex:1 1 auto}.dashboard-content .forge-field input,.dashboard-content .forge-field select,.dashboard-content .forge-field textarea{font-size:16px;min-height:44px}.dashboard-content form.flex>.forge-button{flex:1 1 100%}.dashboard-content .forge-panel{padding:1rem}}
+@media(max-width:420px){.dashboard-topbar-actions{width:100%;justify-content:flex-end}.dashboard-content .metric-grid{grid-template-columns:1fr}.dashboard-content .quote-line{grid-template-columns:1fr}.dashboard-content .quote-line .full{grid-column:auto}}
+
